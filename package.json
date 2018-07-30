@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "parcel build ./index.html --no-cache",
+    "start": "yarn serve",
     "serve": "concurrently \"yarn serve:client\" \"yarn serve:server\"",
     "serve:client": "parcel serve ./index.html",
     "serve:server": "nodemon"
