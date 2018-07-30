@@ -2,7 +2,6 @@ import { socketEvent } from 'ludumjs/common';
 import { GameFactory } from 'ludumjs/server';
 
 import MemoryGame from './MemoryGame';
-import { disconnect } from 'cluster';
 
 class MemoryGameFactory extends GameFactory {
     games: Array<MemoryGame>;
