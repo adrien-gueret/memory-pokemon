@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Memory Game</title>
+        <!-- <link rel="icon" type="image/png" href="./resources/one_player.png" /> -->
+        <script src="./scripts/client/index.ts" async></script>
+    </head>
+    <body>
+        <main id="game">
+            <section class="title">
+                <figure>
+                    <img src="./style/logo.png" />
+                    <figcaption><h1>Memory Game</h1></figcaption>
+                </figure>
+                <button data-action="play" data-difficulty="easy">Easy</button>
+                <button data-action="play" data-difficulty="medium">Medium</button>
+                <button data-action="play" data-difficulty="hard">Hard</button>
+            </section>
+            <section class="game">
+                <div data-dialog="end">
+                    You won!
+                    <br />
+                    New game?<br />
+                    <button data-action="restart" data-difficulty="easy">Easy</button>
+                    <button data-action="restart" data-difficulty="medium">Medium</button>
+                    <button data-action="restart" data-difficulty="hard">Hard</button>
+                </div>
+                <div id="cards" class="cards"></div>
+            </section>
+        </main>
+    </body>
+</html>

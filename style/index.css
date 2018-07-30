@@ -1,0 +1,152 @@
+html {
+    background-color: #333;
+    color: #e3e3e3;
+}
+
+button {
+   padding: 10px 20px;
+   border-radius: 5px;
+   background: #fff;
+   color: #000;
+   border: 2px solid currentColor;
+   font-size: 1.5rem;
+   text-transform: uppercase;
+   font-weight: bold;
+   margin: 5px;
+
+}
+
+button:focus {
+    color: #fff;
+    background-color: #000;
+}
+
+button:hover {
+    color: #2b73b9; 
+}
+
+[data-dialog] {
+    text-align: center;
+}
+
+#game {
+    background-image: url(./background.png);
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title, .game, .title figcaption {
+    display: none;
+}
+
+.title figure img {
+    width: 100%;
+}
+
+.title-phase .title {
+    display: block;
+    text-align: center;
+}
+
+.title-phase .title [data-action] {
+    pointer-events: initial;
+}
+
+.new-game-phase .game,
+.click-card-phase .game,
+.check-phase .game,
+.end-phase .game {
+    display: block;
+}
+
+.cards {
+    text-align: center;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 10% 25% / 35% 20%;
+    margin: 30px;
+    max-width: 790px;
+}
+
+.card {
+    --sprite-column: 7;
+    --sprite-row: 12;
+    position: relative;
+    display: inline-block;
+    width: 128px;
+    height: 128px;
+    margin: 10px;
+    background-image: url(./pokemons.png);
+    background-position: calc(-128px * var(--sprite-column)) calc(-128px * var(--sprite-row)); 
+    transition: filter 100ms;
+}
+
+.card--success {
+    filter: drop-shadow(0 0 3px green) drop-shadow(0 0 4px green) drop-shadow(0 0 5px green);
+}
+
+.card--error {
+    filter: drop-shadow(0 0 3px red) drop-shadow(0 0 4px red) drop-shadow(0 0 5px red);
+}
+
+.card:before {
+    position: absolute;
+    left: 40%;
+    top: 65%;
+    display: block;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    content: '';
+    border-radius: 50%;
+    box-shadow:
+        rgba(240, 240, 240, 1) -2px -2px 5px 10px,
+        rgba(235, 235, 235, .9) -15px -10px 5px 15px,
+        rgba(225, 225, 225, .8) -20px -20px 5px 10px,
+        rgba(240, 240, 240, 1) 25px -10px 5px 15px,
+        rgba(235, 235, 235, .9) 0 0 5px 5px,
+        rgba(225, 225, 225, .8) 10px 10px 5px 15px,
+        rgba(240, 240, 240, 1) -5px -5px 5px 15px,
+        rgba(235, 235, 235, .9) -25px -20px 5px 10px,
+        rgba(225, 225, 225, .8) -10px -10px 5px 10px,
+        rgba(240, 240, 240, 1) 25px -20px 5px 15px,
+        rgba(235, 235, 235, .9) 10px -10px 5px 5px,
+        rgba(225, 225, 225, .8) 0 -30px 5px 15px
+        ;
+    
+    transform-origin: center;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+@keyframes doubleScale {
+    0% { transform: scale(0); }
+	100% { transform: scale(2); }
+}
+
+.check-phase .card--appearing:before,
+.end-phase .card--appearing:before {
+    animation: doubleScale .4s 1 backwards ease;
+}
+
+.check-phase .card--disappearing:before {
+    animation: doubleScale .3s 1 backwards ease reverse;
+}
+
+.click-card-phase .card:not(.card--visible) {
+    cursor: pointer;
+    pointer-events: initial;
+}
+
+.click-card-phase .card:not(.card--visible):hover {
+    animation-name: ludumjs-shake;
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+}

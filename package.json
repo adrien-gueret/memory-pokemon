@@ -1,0 +1,23 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "parcel build ./index.html --no-cache",
+    "serve": "concurrently \"yarn serve:client\" \"yarn serve:server\"",
+    "serve:client": "parcel serve ./index.html",
+    "serve:server": "nodemon"
+  },
+  "author": "Adrien GUERET",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.17.4",
+    "parcel-bundler": "^1.7.1",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "ludumjs": "^3.0.0"
+  }
+}
