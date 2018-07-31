@@ -13,4 +13,4 @@ const game = new MemoryGame(document.getElementById('game'));
 
 game.registerPhases([TitlePhase, NewGamePhase, ClickCardPhase, CheckPhase, EndPhase]);
 
-game.connect(1337);
+game.connect(80);
