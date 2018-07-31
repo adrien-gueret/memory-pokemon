@@ -1,1 +1,1 @@
-web: yarn serve:server
+web: ts-node ./scripts/server/index.ts
