@@ -1,1 +1,0 @@
-web: ts-node ./scripts/server/index.ts

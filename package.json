@@ -14,11 +14,11 @@
   "devDependencies": {
     "concurrently": "^3.5.1",
     "nodemon": "^1.17.4",
-    "parcel-bundler": "^1.7.1",
-    "ts-node": "^6.0.3",
-    "typescript": "^2.8.3"
+    "parcel-bundler": "^1.7.1"
   },
   "dependencies": {
-    "ludumjs": "^3.0.0"
+    "ludumjs": "^3.0.0",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3"
   }
 }
