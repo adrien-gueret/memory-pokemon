@@ -65,6 +65,7 @@ button:hover {
 .check-phase .game,
 .end-phase .game {
     display: block;
+    z-index: 1;
 }
 
 .cards {
@@ -149,4 +150,29 @@ button:hover {
     animation-name: ludumjs-shake;
     animation-duration: .8s;
     animation-iteration-count: infinite;
+}
+
+#game > aside {
+    position: fixed;
+    z-index: 0;
+    bottom: 10px;
+    right: 10px;
+}
+
+#game > aside .icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .3);
+    fill: inherit;
+}
+
+#game > aside a {
+    pointer-events: initial;
+    display: inline-block;
+}
+
+#game > aside a:hover .icon {
+    background-color: rgba(0, 0, 0, .4);
+    fill: #fff;
 }
