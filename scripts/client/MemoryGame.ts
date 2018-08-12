@@ -37,6 +37,6 @@ export default class MemoryGame extends OnlineGame {
 
     @socketEvent
     connect_error() {
-        alert('Can\'t connect to server.');
+        console.error('Can\'t connect to server.');
     }
 };

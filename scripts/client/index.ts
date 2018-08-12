@@ -9,8 +9,15 @@ import CheckPhase from './CheckPhase';
 import 'ludumjs/ludumjs.css';
 import '../../style/index.css';
 
+declare const process : {
+    env: {
+        SERVER_PORT?: number,
+        SERVER_URL?: string,
+    }
+}
+
 const game = new MemoryGame(document.getElementById('game'));
 
 game.registerPhases([TitlePhase, NewGamePhase, ClickCardPhase, CheckPhase, EndPhase]);
 
-game.connect(80);
+game.connect(process.env.SERVER_PORT, process.env.SERVER_URL);
