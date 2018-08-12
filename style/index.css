@@ -30,7 +30,7 @@ button:hover {
 }
 
 #game {
-    background-image: url(./background.png);
+    background-image: url(./background.png), url(./background.jpg);
     background-size: cover;
     position: absolute;
     left: 0;
@@ -83,7 +83,7 @@ button:hover {
     width: 128px;
     height: 128px;
     margin: 10px;
-    background-image: url(./pokemons.png);
+    background-image:  url(./pokemons.png), url(./pokemons-ld.png);
     background-position: calc(-128px * var(--sprite-column)) calc(-128px * var(--sprite-row)); 
     transition: filter 100ms;
 }
